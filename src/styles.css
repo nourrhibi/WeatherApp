@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+html,
+body {
+background-color: #FFC6E1;
+    /* Remove default margin */
+}
+
+
+/* Custom background color */
+.bg-custom-pink {
+    
+        /* Ensure it fills the container */
+}
+
+/* Custom typography for search bar */
+.search-bar {
+    font-family: Inter;
+    font-weight: 200;
+    font-size: 20px;
+    color: #979292;
+}
+
+/* Custom typography for title */
+.title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.sub-title {
+    font-size: 15px;
+    font-weight: 500;
+    color : #1E1E1E;
+
+}
+
+.temp-one{
+    font-size: 15px;
+    font-weight: 500;
+    color: #1E1E1E;
+
+
+}
+
+.temp-two {
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #979292;
+}
+
+.big-temp{
+
+    font-size: 64px;
+    font-weight: 300;
+    color: #1E1E1E;
+}
+
+.today-temp{
+
+    font-size: 20px;
+    font-weight: 300;
+    color: #1E1E1E;
+}
+
+.today-forecast {
+
+    font-size: 36px;
+    font-weight: 300;
+    color: #1E1E1E;
+}
+
+.custom-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    /* x:0, y:4, blur:20, opacity:25% */
+}
+
+
+.small-card{
+    background-color: white;
+    width: 187px;
+    height: 187px;
+}
+
+
+.big-card {
+    background-color: white;
+    
+    height: 553px;
+}
+
+
+.medium-card {
+    background-color: white;
+    height: 263px;
+}

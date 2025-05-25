@@ -1,27 +1,104 @@
-# WeatherApp
+# 🌤️ Weather Forecast App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+A modern, responsive weather forecast web application built with **Angular** and **Tailwind CSS**. Search for any city to view the current weather, 7-day forecast, and related conditions in a clean and interactive UI.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- 🔍 Real-time weather search with suggestions
+- 🌡️ Current temperature, condition, humidity, pressure, wind speed, and UV index
+- 📆 7-day forecast with dynamic images and temperatures
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 🌐 Powered by [WeatherAPI](https://www.weatherapi.com/)
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🖼️ Preview
 
-## Running unit tests
+![App Preview](./screenshot.png) <!-- You can add a screenshot later -->
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 📦 Tech Stack
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [Angular](https://angular.io/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [WeatherAPI](https://www.weatherapi.com/)
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🛠️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/weather-app.git
+cd weather-app
+```
+---
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up your environment variables
+
+Create a new file named environment.ts inside src/environments/:
+```bash
+cp src/environments/environment.sample.ts src/environments/environment.ts
+```
+Edit environment.ts and add your WeatherAPI key:
+```bash
+export const environment = {
+  production: false,
+  weatherApiKey: 'YOUR_API_KEY_HERE'
+};
+
+```
+⚠️ Do not commit environment.ts. It is ignored by Git.
+
+### 4. Run the app
+```bash
+ng serve
+```
+Navigate to: http://localhost:4200
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+├── app/
+│   ├── components/
+│   │   ├── search/
+│   │   ├── today-forecast/
+│   │   └── week-forecast/
+│   ├── services/
+│   │   └── weather.service.ts
+├── environments/
+│   ├── environment.ts          # 🔐 API key (ignored by Git)
+│   └── environment.sample.ts   # ✅ Safe sample to share
+
+```
+
+---
+
+## 🧪 Sample API for Testing
+
+You can use WeatherAPI.com and sign up for a free key.
+
+Sample endpoint for city suggestions:
+
+```bash
+https://api.weatherapi.com/v1/search.json?key=YOUR_API_KEY&q=Tunis
+```
+
+Sample endpoint for weather data:
+
+```bash
+https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=Tunis&days=7
+```

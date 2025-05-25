@@ -1,0 +1,21 @@
+<div class="sub-title flex justify-center p-6">
+    <div class="relative  w-full max-w-[600px]"> <!-- Add relative positioning -->
+        <!-- Search Icon -->
+        <img src="assets/images/search.png" alt="Search"
+            class="w-5 h-5 absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400" 
+        />
+
+        <!-- Input Field -->
+        <input [(ngModel)]="searchValue" (input)="onInputChange()" (keyup.enter)="onSearch()"
+            class="pl-14 p-2 w-full border shadow-xl custom-shadow search-bar rounded-full focus:outline-none focus:ring-2 focus:ring-pink-300"
+            placeholder="Search" />
+
+
+            <div *ngIf="suggestions.length > 0"
+                class="absolute  w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                <button *ngFor="let city of suggestions" (click)="selectSuggestion(city)"
+                    class="w-full text-left px-4 py-2 hover:bg-pink-100">
+                    {{ city.name }}, {{ city.country }}
+                </button>  </div>
+    </div>
+</div>

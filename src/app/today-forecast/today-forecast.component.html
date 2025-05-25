@@ -1,0 +1,155 @@
+<div class="flex flex-col p-6 ">
+    <p class="title pb-6">Today’s Highlight</p>
+
+    <div class="flex flex-col sm:flex-row justify-start gap-6 sm:gap-20 flex-1">
+        
+        <div class="big-card w-full sm:w-[467px] rounded-md custom-shadow 
+        flex-shrink-0 flex flex-col 
+        justify-start   
+        items-center"> 
+
+            <!-- Sunny / Clear -->
+            <img *ngIf="weatherData?.condition?.toLowerCase().includes('clear') || weatherData?.condition?.toLowerCase().includes('sun')"
+            src="assets/images/sun.gif"  alt="Weather animation" class="w-64 h-64 pt-6">
+
+            <!-- Cloudy -->
+            <img *ngIf="weatherData?.condition?.toLowerCase().includes('cloud') || weatherData?.condition?.toLowerCase().includes('overcast') " src="assets/images/cloudy.gif"
+            alt="Weather animation" class="w-64 h-64 pt-6">
+            
+            <!-- Rainy -->
+            <img *ngIf="weatherData?.condition?.toLowerCase().includes('rain') || weatherData?.condition?.toLowerCase().includes('snow') " src="assets/images/rain.gif"
+            alt="Weather animation" class="w-64 h-64 pt-6">
+
+            <div class="flex flex-col pl-20 sm:pl-0 justify-start">
+
+            
+                <p class="big-temp pt-6 mr-60" *ngIf="weatherData">
+                    {{ weatherData.temperature}}°C
+                </p>
+
+                
+                <div class="flex flex-row gap-2  items-center">
+
+                    <img  *ngIf="weatherData?.isDay === 1" src="assets/images/sun.gif" alt="Weather animation" class="w-[50px] h-[50px] ">
+                    <img *ngIf="weatherData?.isDay === 0" src="assets/images/night.gif" alt="Weather animation" class="w-[50px] h-[50px] ">
+                    <p class="today-temp" *ngIf="weatherData">{{ weatherData.date | date:'EEE, MMM dd yyyy, HH:mm' }} </p>
+                </div>
+
+                <div class="flex flex-row gap-2 pt-4 items-center">
+                
+                    <!-- Cold image -->
+                    <img  *ngIf="weatherData?.temperature <= 10" src="assets/images/cold.gif"  alt="Weather animation"
+                         class="w-[50px] h-[50px] ">
+                    
+                    <!-- Normal image -->
+                    <img  *ngIf="weatherData?.temperature > 10 && weatherData?.temperature <= 25" src="assets/images/happy.gif" alt="Weather animation"
+                        class="w-[50px] h-[50px] ">
+
+                    <!-- Hot image -->
+                    <img *ngIf="weatherData?.temperature > 25" src="assets/images/hot.gif" src="assets/images/hot.gif" alt="Weather animation"
+                        class="w-[50px] h-[50px] ">
+                    
+                    <p class="today-temp" *ngIf="weatherData">{{ weatherData.condition}}</p>
+                </div>
+        
+            </div>
+
+
+        </div>
+
+        <div class="grid grid-cols-1  sm:grid-cols-2 gap-8 flex-1">
+
+
+            <div class="medium-card rounded-md custom-shadow 
+                            flex-shrink-0 flex flex-col 
+                            justify-start   
+                            items-start 
+                            pt-6 pl-10">
+            
+
+                            <p class="sub-title">UV Index</p>
+
+
+                            <div class=" w-full flex flex-row justify-center items-center gap-10 sm:gap-[130px] pt-10 pr-10 sm:pr-2">
+
+                                <img src="assets/images/sun (1).gif" alt="Weather animation" class="w-[100px] h-[100px]">
+                                <p class="today-forecast flex-shrink-0" *ngIf="weatherData">{{ weatherData.uv}} nm</p>
+
+                            </div>
+            
+            
+            </div>
+
+
+            <div class="medium-card rounded-md custom-shadow 
+                                        flex-shrink-0 flex flex-col 
+                                        justify-start   
+                                        items-start 
+                                        pt-6 pl-10">
+            
+            
+                <p class="sub-title">Wind Speed</p>
+            
+            
+                <div class=" w-full flex flex-row justify-center items-center gap-10 sm:gap-[130px] pt-10 pr-10 sm:pr-2 ">
+            
+                    <img src="assets/images/wind.gif" alt="Weather animation" class="w-[100px] h-[100px]">
+                    <p class="today-forecast flex-shrink-0" *ngIf="weatherData">{{ weatherData.windSpeed}} m/s</p>
+            
+                </div>
+            
+            
+            </div>
+
+
+
+            <div class="medium-card rounded-md custom-shadow 
+                                        flex-shrink-0 flex flex-col 
+                                        justify-start   
+                                        items-start 
+                                        pt-6 pl-10">
+            
+            
+                <p class="sub-title">Humidity</p>
+            
+            
+                <div class=" w-full flex flex-row justify-center items-center gap-10 sm:gap-[130px] pt-10 pr-10 sm:pr-2 ">
+            
+                    <img src="assets/images/humidity.gif" alt="Weather animation" class="w-[100px] h-[100px]">
+                    <p class="today-forecast flex-shrink-0" *ngIf="weatherData">{{ weatherData.humidity}} %</p>
+            
+                </div>
+            
+            
+            </div>
+
+
+            <div class="medium-card rounded-md custom-shadow 
+                                        flex-shrink-0 flex flex-col 
+                                        justify-start   
+                                        items-start 
+                                        pt-6 pl-10">
+            
+            
+                <p class="sub-title">Pressure</p>
+            
+            
+                <div class=" w-full flex flex-row justify-center items-center gap-10 sm:gap-[130px] pt-10 pr-10 sm:pr-2 ">
+            
+                    <img src="assets/images/gauge.gif" alt="Weather animation" class="w-[100px] h-[100px]">
+                    <p class="today-forecast flex-shrink-0" *ngIf="weatherData">{{ weatherData.pressure}} hPa</p>
+            
+                </div>
+            
+            
+            </div>
+
+           
+
+
+        </div>
+        
+       
+    </div>
+
+</div>
